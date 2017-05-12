@@ -50,7 +50,21 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+					if(text.includes("kaart")){ 
+			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
+				//sendButtonMessage(sender, text)
+			}
+			else if(text.includes("ticket")){
+				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
+				//sendButtonMessage(sender, text)
+			}
+			else if(text.includes("bewijs")){
+				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
+				//sendButtonMessage(sender, text)
+			}
+			else{
+				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
+			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
