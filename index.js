@@ -51,7 +51,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 					if(text.includes("kaart")){ 
-			sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen! ")
+			sendTextMessage(sender, "Leuk dat je (één) kaartje(s) wil bestellen! ")
 				//sendButtonMessage(sender, text)
 			}
 			else if(text.includes("ticket")){
@@ -147,8 +147,33 @@ function sendGenericMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
+}	
+	/*function sendButtonMessage(sender, text){
+	let messagedata = {
+		"message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"Wat voor tickets wil je?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "title":"Vip",
+            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
+          },
+          {
+            "type":"postback",
+            "title":"Regular",
+            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
+          }
+        ]
+      }
+    }
+  }
 }
-
+}
+*/
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
