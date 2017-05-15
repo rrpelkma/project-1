@@ -148,7 +148,7 @@ function sendGenericMessage(sender) {
 		}
 	})
 }	
-	/*function sendButtonMessage(sender, text){
+	function sendButtonMessage(sender, text){
 	let messagedata = {
 		"message":{
     "attachment":{
@@ -158,7 +158,7 @@ function sendGenericMessage(sender) {
         "text":"Wat voor tickets wil je?",
         "buttons":[
           {
-            "type":"web_url",
+            "type":"postback",
             "title":"Vip",
             "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
           },
@@ -173,7 +173,7 @@ function sendGenericMessage(sender) {
   }
 }
 }
-*/
+
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
