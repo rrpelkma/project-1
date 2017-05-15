@@ -52,7 +52,14 @@ app.post('/webhook/', function (req, res) {
 			}
 			if(text.includes("kaart")){ 
 			sendTextMessage(sender, "Leuk dat je (één) kaartje(s) wil bestellen! ")
-				sendButtonMessage(sender, "Wat voor kaartjes wil je bestellen?")
+				//sendButtonMessage(sender, "Wat voor kaartjes wil je bestellen?")
+				"buttons":[
+				{
+					"type":"postback",
+					"title":"Bookmark Item",
+					"payload":"DEVELOPER_DEFIND_PAYLOAD"
+				}
+			]
 			}
 			else if(text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
@@ -148,7 +155,7 @@ function sendGenericMessage(sender) {
 		}
 	})
 }	
-	function sendButtonMessage(sender, text){
+/*	function sendButtonMessage(sender, text){
 	let messagedata = {
 		"message":{
     "attachment":{
@@ -172,7 +179,7 @@ function sendGenericMessage(sender) {
     }
   }
 }
-}
+} */
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
