@@ -149,30 +149,30 @@ function sendGenericMessage(sender) {
 		}
 	})
 }	
-	function sendButtonMessage(sender, text){
+	function sendButtonMessage(sender){
 	let messagedata = {
-		"message":{
+		//"message":{
     "attachment":{
       "type":"template",
       "payload":{
-        "template_type":"button",
-        "text":"Wat voor tickets wil je?",
-        "buttons":[
-          {
-            "type":"postback",
-            "title":"Vip",
-            "payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
-          },
-          {
-            "type":"postback",
-            "title":"Regular",
-            "payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
-          }
-        ]
-      }
-    }
-  }
-}
+			"template_type":"generic",
+			"elements": [{
+				"tiltle":"Wat voor tickets wil je?",
+				"buttons":[{
+						"type":"postback",
+						"title":"Vip",
+						"payload":"Leuk dat je Vip tickets wil bestellen ! Hoe veel wil je er bestellen?"
+						},
+						{
+						"type":"postback",
+						"title":"Regular",
+						"payload":"Leuk dat je regular tickets wil bestellen! Hoe veel wil je er bestellen?"
+						}
+					]
+				}
+			}
+		}
+	}
 }
 
 // spin spin sugar
