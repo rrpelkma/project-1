@@ -108,28 +108,33 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First card",
+					"title": "Regular Tickets",
 					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					//"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
-						"type": "web_url",
-						"url": "https://www.messenger.com",
-						"title": "web url"
+						"type": "postback",
+						//"url": "https://www.messenger.com",
+						"title": "1",
+						"payload": "1 Regular ticket"
 					}, {
 						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
+						"title": "2",
+						"payload": "2 Regular tickets",
 					}],
-				}, /*{
-					"title": "Second card",
+				}, {
+					"title": "Vip Tickets",
 					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+					//"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"title": "1",
+						"payload": "1 VIP Ticket",
+					},	{
+						"type": "postback",
+						"title": "2",
+						"payload": "2 VIP Tickets",
 					}],
-				}]*/
+				}]
 			}
 		}
 	}
