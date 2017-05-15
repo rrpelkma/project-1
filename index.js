@@ -58,10 +58,12 @@ app.post('/webhook/', function (req, res) {
 			else if (text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
 				//sendButtonMessage(sender, text)
+				sendGenericMessage(sender)
 			}
 			else if (text.includes("bewijs")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
 				//sendButtonMessage(sender, text)
+				sendGenericMessage(sender)
 			}
 			else{
 				sendTextMessage(sender, "Sorry, ik begrijp je niet helemaal, probeer eens: kaartje !")
@@ -69,7 +71,7 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+			sendTextMessage(sender, text.substring(0, 200) + ", klik in de onderstaande link voor het betalen van je tickets", token)
 			continue
 		}
 	}
@@ -109,7 +111,7 @@ function sendGenericMessage(sender) {
 				"template_type": "generic",
 				"elements": [{
 					"title": "Regular Tickets",
-					"subtitle": "Element #1 of an hscroll",
+					"subtitle": "Ga naar rechts voor de VIP Tickets",
 					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 					"buttons": [{
 						"type": "postback",
@@ -122,15 +124,15 @@ function sendGenericMessage(sender) {
 					}],
 				}, {
 					"title": "Vip Tickets",
-					"subtitle": "Element #2 of an hscroll",
+					"subtitle": "Ga naar links voor de Regular Tickets",
 					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 					"buttons": [{
 						"type": "postback",
-						"title": "1",
+						"title": "1 VIP",
 						"payload": "1 VIP Ticket",
 					},	{
 						"type": "postback",
-						"title": "2",
+						"title": "2 VIP",
 						"payload": "2 VIP Tickets",
 					}],
 				}]
