@@ -51,17 +51,20 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if (text.includes('kaart')){ 
-				sendTextMessage(sender, "Leuk dat je (één) kaartje(s) wil bestellen! ")
+				sendTextMessage(sender, "Leuk dat je kaartjes wilt bestellen! ")
+				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender)
 				sendGenericMessage(sender)
 			}
 			else if (text.includes("ticket")){
-				sendTextMessage(sender, "Leuk dat je tickets wil bestellen!")
+				sendTextMessage(sender, "Leuk dat je tickets wil bestellen
+				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender, text)
 				sendGenericMessage(sender)
 			}
 			else if (text.includes("bewijs")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
+				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender, text)
 				sendGenericMessage(sender)
 			}
@@ -71,7 +74,7 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, text.substring(0, 200) + ", klik in de onderstaande link voor het betalen van je tickets", token)
+			sendTextMessage(sender, text/*.substring(0, 200)*/ + ", klik in de onderstaande link voor het betalen van je tickets", token)
 			continue
 		}
 	}
@@ -155,6 +158,7 @@ function sendGenericMessage(sender) {
 		}
 	})
 }
+/*
 function sendButtonMessage(sender){
 	let messagedata = {
 		//"message":{
@@ -196,7 +200,7 @@ function sendButtonMessage(sender){
 		}
 	})
 }
-
+*/
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
