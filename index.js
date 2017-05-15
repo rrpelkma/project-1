@@ -51,8 +51,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if(text.includes('kaart')){ 
-			//sendTextMessage(sender, "Leuk dat je (één) kaartje(s) wil bestellen! ")
-				sendButtonMessage(sender)
+				sendTextMessage(sender, "Leuk dat je (één) kaartje(s) wil bestellen! ")
+				//sendButtonMessage(sender)
+				sendGenericMessage(sender)
 				continue
 			}
 			else if(text.includes("ticket")){
@@ -100,7 +101,7 @@ function sendTextMessage(sender, text) {
 		}
 	})
 }
-/*
+
 function sendGenericMessage(sender) {
 	let messageData = {
 		"attachment": {
@@ -148,7 +149,7 @@ function sendGenericMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
-}*/	
+}
 	function sendButtonMessage(sender){
 	let messagedata = {
 		//"message":{
