@@ -52,19 +52,19 @@ app.post('/webhook/', function (req, res) {
 			}
 			if (text.includes('kaart')){ 
 				sendTextMessage(sender, "Leuk dat je kaartjes wilt bestellen! ")
-				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
+				//sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender)
 				sendGenericMessage(sender)
 			}
 			else if (text.includes("ticket")){
 				sendTextMessage(sender, "Leuk dat je tickets wil bestellen
-				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
+				//sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender, text)
 				sendGenericMessage(sender)
 			}
 			else if (text.includes("bewijs")){
 				sendTextMessage(sender, "Leuk dat je kaartjes wil bestellen!")
-				sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
+				//sendTextMessage(sender, "Hoeveel kaartje(s) wilt u bestellen? ")
 				//sendButtonMessage(sender, text)
 				sendGenericMessage(sender)
 			}
