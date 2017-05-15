@@ -73,8 +73,8 @@ app.post('/webhook/', function (req, res) {
 			}
 		}
 		if (event.postback) {
-			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, text/*.substring(0, 200)*/ + ", klik in de onderstaande link voor het betalen van je tickets", token)
+			let text = /*JSON.stringify(*/event.postback//)
+			sendTextMessage(sender, text.substring(0, 200) + ", klik in de onderstaande link voor het betalen van je tickets", token)
 			continue
 		}
 	}
