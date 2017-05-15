@@ -110,21 +110,20 @@ function sendGenericMessage(sender) {
 				"elements": [{
 					"title": "Regular Tickets",
 					"subtitle": "Element #1 of an hscroll",
-					//"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 					"buttons": [{
 						"type": "postback",
-						//"url": "https://www.messenger.com",
-						"title": "1",
+						"title": "1 Regular",
 						"payload": "1 Regular ticket"
 					}, {
 						"type": "postback",
-						"title": "2",
+						"title": "2 Regular",
 						"payload": "2 Regular tickets",
 					}],
 				}, {
 					"title": "Vip Tickets",
 					"subtitle": "Element #2 of an hscroll",
-					//"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+					"image_url": "https://www.visitljubljana.com/assets/gallery/flow.jpg",
 					"buttons": [{
 						"type": "postback",
 						"title": "1",
