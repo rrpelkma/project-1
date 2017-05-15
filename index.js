@@ -150,7 +150,7 @@ function sendGenericMessage(sender) {
 		}
 	})
 }
-	function sendButtonMessage(sender){
+/*function sendButtonMessage(sender){
 	let messagedata = {
 		//"message":{
     "attachment":{
@@ -189,7 +189,7 @@ function sendGenericMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
-}
+}*/
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
